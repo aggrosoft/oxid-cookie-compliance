@@ -5,10 +5,10 @@
   "scripts": {
     "release": "dotenv release-it -VV",
     "test-release": "release-it --dry-run",
-    "postinstall": "cp node_modules/cookieconsent/build/cookieconsent.min.js copy_this/modules/agcookiecompliance/out/js/cookieconsent.min.js && cp node_modules/cookieconsent/build/cookieconsent.min.css copy_this/modules/agcookiecompliance/out/css/cookieconsent.min.css"
+    "postinstall": "cp node_modules/cookieconsent/build/cookieconsent.min.js copy_this/modules/agcookiecompliance/out/js/cookieconsent.min.js"
   },
   "dependencies": {
-    "cookieconsent": "^3.1.1"
+    "cookieconsent": "osano/cookieconsent#dev"
   },
   "devDependencies": {
     "release-it": "^13.5.4",

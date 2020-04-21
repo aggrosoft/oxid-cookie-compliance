@@ -6,32 +6,32 @@
     var COOKIE_COMPLIANCE_SETTINGS = {
         "palette": {
             "popup": {
-                "background": "[{$oViewConf->getCookieConsentModuleSetting('sBannerBackgroundColor')}]",
-                "text": "[{$oViewConf->getCookieConsentModuleSetting('sBannerTextColor')}]"
+                "background": "[{$oViewConf->getCookieComplianceModuleSetting('sBannerBackgroundColor')}]",
+                "text": "[{$oViewConf->getCookieComplianceModuleSetting('sBannerTextColor')}]"
             },
             "button": {
-                "background": "[{$oViewConf->getCookieConsentModuleSetting('sButtonBackgroundColor')}]",
-                "text": "[{$oViewConf->getCookieConsentModuleSetting('sButtonTextColor')}]"
-            }
-            "highlight": {
-                "background": "[{$oViewConf->getCookieConsentModuleSetting('sHighlightBackgroundColor')}]",
-                "text": "[{$oViewConf->getCookieConsentModuleSetting('sHighlightTextColor')}]",
-                "border": "[{$oViewConf->getCookieConsentModuleSetting('sHighlightBorderColor')}]"
+                "background": "[{$oViewConf->getCookieComplianceModuleSetting('sButtonBackgroundColor')}]",
+                "text": "[{$oViewConf->getCookieComplianceModuleSetting('sButtonTextColor')}]"
             },
+            "highlight": {
+                "background": "[{$oViewConf->getCookieComplianceModuleSetting('sHighlightBackgroundColor')}]",
+                "text": "[{$oViewConf->getCookieComplianceModuleSetting('sHighlightTextColor')}]",
+                "border": "[{$oViewConf->getCookieComplianceModuleSetting('sHighlightBorderColor')}]"
+            }
         },
-        "theme": "[{$oViewConf->getCookieConsentModuleSetting('sBannerTheme')}]",
-        "position": "[{$oViewConf->getCookieConsentModuleSetting('sBannerPosition')}]",
-        "static": [{if $oViewConf->getCookieConsentModuleSetting('blStaticBanner')}]true[{else}]false[{/if}],
-        "type": "[{$oViewConf->getCookieConsentModuleSetting('sBannerPosition')}]",
-        content: {
-            header : '[{oxmultilang ident="COOKIE_COMPLIANCE_HEADER"}]',
-            message: '[{oxmultilang ident="COOKIE_COMPLIANCE_MESSAGE"}]',
-            dismiss: '[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]',
-            allow  : '[{oxmultilang ident="COOKIE_COMPLIANCE_ALLOW"}]',
-            deny   : '[{oxmultilang ident="COOKIE_COMPLIANCE_DECLINE"}]',
-            link   : '[{oxmultilang ident="COOKIE_COMPLIANCE_HEADER"}]',
-            href   : '[{$oViewConf->getCookieConsentModuleSetting('sInfoLink', $sSecurityLink)}]',
-            policy : '[{oxmultilang ident="COOKIE_COMPLIANCE_POLICY"}]'
+        "theme": "[{$oViewConf->getCookieComplianceModuleSetting('sBannerTheme')}]",
+        "position": "[{$oViewConf->getCookieComplianceModuleSetting('sBannerPosition')}]",
+        "static": [{if $oViewConf->getCookieComplianceModuleSetting('blStaticBanner')}]true[{else}]false[{/if}],
+        "type": "[{$oViewConf->getCookieComplianceModuleSetting('sConsentType')}]",
+        "content": {
+            "header" : '[{oxmultilang ident="COOKIE_COMPLIANCE_HEADER"}]',
+            "message": '[{oxmultilang ident="COOKIE_COMPLIANCE_MESSAGE"}]',
+            "dismiss": '[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]',
+            "allow"  : '[{oxmultilang ident="COOKIE_COMPLIANCE_ALLOW"}]',
+            "deny"   : '[{oxmultilang ident="COOKIE_COMPLIANCE_DECLINE"}]',
+            "link"   : '[{oxmultilang ident="COOKIE_COMPLIANCE_HEADER"}]',
+            "href"   : '[{$oViewConf->getCookieComplianceModuleSetting('sInfoLink', $sSecurityLink)}]',
+            "policy" : '[{oxmultilang ident="COOKIE_COMPLIANCE_POLICY"}]'
         },
     };
 [{/strip}]
@@ -39,5 +39,4 @@
 [{oxscript add=$complianceSettings}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/cookieconsent.min.js'}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/agcookiecompliance.js'}]
-[{oxstyle include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/css/cookieconsent.min.css'}]
 
