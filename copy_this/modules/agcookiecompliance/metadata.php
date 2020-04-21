@@ -7,7 +7,7 @@ $aModule = array(
     'title'        => '<img src="' . oxRegistry::getConfig()->getShopUrl() . 'modules/agcookiecompliance/out/img/logo.png" height="15" alt="Cookie Compliance" title="Cookie Compliance"> Cookie Compliance',
     'description'  => 'GDPR Cookie Compliance',
     'thumbnail'    => '',
-    'version'      => '1.0.3',
+    'version'      => '1.0.4',
     'author'       => 'Aggrosoft GmbH',
     'extend'      => array(
         'oxviewconfig' => 'agcookiecompliance/extensions/core/agcookiecompliance_oxviewconfig'
