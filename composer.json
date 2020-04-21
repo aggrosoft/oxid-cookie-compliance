@@ -1,0 +1,19 @@
+{
+  "name": "aggrosoft/oxid-cookie-compliance",
+  "type": "oxideshop-module",
+  "version": "1.0.0",
+  "description": "GDPR Cookie Compliance",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Kludt",
+      "homepage": "https://github.com/aggrosoft"
+    }
+  ],
+  "extra": {
+    "oxideshop": {
+      "source-directory": "copy_this/modules/agcookiecompliance/",
+      "target-directory": "agcookiecompliance"
+    }
+  }
+}
