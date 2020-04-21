@@ -17,11 +17,9 @@
     "dotenv-cli": "^3.1.0"
   },
   "release-it": {
-    "git": {
-      "tagName": "${version}",
-      "commitMessage": "chore: release v${version}"
+    "github": {
+      "release": true
     },
-    "github": {},
     "npm": {
       "publish": false
     },
