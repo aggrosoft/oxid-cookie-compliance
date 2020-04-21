@@ -1,5 +1,5 @@
 $(function(){
-  window.cookieconsent.initialise({
+  window.cookieconsent.initialise(Object.assign(window.COOKIE_COMPLIANCE_SETTINGS,{
     cookie: {
       // This is the name of this cookie - you can ignore this
       name: 'cookieconsent_status',
@@ -13,5 +13,5 @@ $(function(){
       console.log(this.hasConsented() ?
         'enable cookies' : 'disable cookies');
     },
-  });
+  }));
 })
