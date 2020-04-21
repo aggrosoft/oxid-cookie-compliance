@@ -24,7 +24,7 @@
       "publish": false
     },
     "hooks": {
-      "after:bump": "npx auto-changelog -p --commit-url {id} --issue-url {id} --merge-url {id} --compare-url {from}/{to}",
+      "after:bump": "npx auto-changelog -p",
       "after:release": [
         "echo Successfully released ${name} v${version} to ${repo.repository}."
       ]
