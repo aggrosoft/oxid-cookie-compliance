@@ -39,4 +39,3 @@
 [{oxscript add=$complianceSettings}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/cookieconsent.min.js'}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/agcookiecompliance.js'}]
-
