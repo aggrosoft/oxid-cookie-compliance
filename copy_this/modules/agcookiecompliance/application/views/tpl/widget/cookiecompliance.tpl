@@ -39,3 +39,19 @@
 [{oxscript add=$complianceSettings}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/cookieconsent.min.js'}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/agcookiecompliance.js'}]
+[{if $oViewConf->getCookieComplianceModuleSetting('blTrainingMode')}]
+[{capture assign=trainingScript}]
+[{strip}]
+$(function(){
+    $.ajax({
+        url: '[{$oViewConf->getSelfActionLink()}]',
+        data: {
+            cl: 'cookietrainer',
+            fnc: 'track',
+            cookies: document.cookies
+        }
+    })
+});
+[{/strip}]
+[{/capture}]
+[{/if}]

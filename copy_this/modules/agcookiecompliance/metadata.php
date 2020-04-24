@@ -13,13 +13,14 @@ $aModule = array(
         'oxviewconfig' => 'agcookiecompliance/extensions/core/agcookiecompliance_oxviewconfig'
     ),
     'files'       => array(
-
+        'agcookiecompliance_installer' => 'agcookiecompliance/application/core/agcookiecompliance_installer.php',
+        'cookietrainer' => 'agcookiecompliance/application/controllers/cookietrainer.php',
     ),
     'templates'   => array(
         'widget/cookiecompliance.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookiecompliance.tpl',
     ),
     'events'       => array(
-
+        'onActivate'   => 'agcookiecompliance_installer::onActivate',
     ),
     'settings' => array(
         array('group' => 'agcookiecompliance_layout', 'name' => 'sBannerPosition', 'type' => 'select', 'value' => 'bottom', 'constraints' => 'bottom|top|bottom-left|bottom-right'),
@@ -34,6 +35,7 @@ $aModule = array(
         array('group' => 'agcookiecompliance_colors', 'name' => 'sHighlightBorderColor', 'type' => 'str', 'value' => '#d65959'),
         array('group' => 'agcookiecompliance_settings', 'name' => 'sConsentType', 'type' => 'select', 'value' => 'categories', 'constraints' => 'categories|opt-in|opt-out|info'),
         array('group' => 'agcookiecompliance_settings', 'name' => 'sInfoLink', 'type' => 'str', 'value' => ''),
+        array('group' => 'agcookiecompliance_settings', 'name' => 'blTrainingMode', 'type' => 'bool', 'value' => false),
     ),
     'blocks' => array(
         array('template' => 'layout/base.tpl','block'=>'base_style','file'=>'/views/blocks/base_style.tpl'),
