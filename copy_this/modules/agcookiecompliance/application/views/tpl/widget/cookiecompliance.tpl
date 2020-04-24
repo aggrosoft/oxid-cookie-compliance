@@ -45,13 +45,15 @@
 $(function(){
     $.ajax({
         url: '[{$oViewConf->getSelfActionLink()}]',
+        method: 'POST',
         data: {
             cl: 'cookietrainer',
             fnc: 'track',
-            cookies: document.cookies
+            cookies: document.cookie
         }
     })
 });
 [{/strip}]
 [{/capture}]
+[{oxscript add=$trainingScript}]
 [{/if}]
