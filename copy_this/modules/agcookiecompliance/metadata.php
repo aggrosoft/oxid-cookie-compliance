@@ -44,6 +44,6 @@ $aModule = array(
         array('group' => 'agcookiecompliance_settings', 'name' => 'blTrainingMode', 'type' => 'bool', 'value' => false),
     ),
     'blocks' => array(
-        array('template' => 'layout/base.tpl','block'=>'base_style','file'=>'/views/blocks/base_style.tpl'),
+        array('template' => 'layout/base.tpl','block'=>'base_js','file'=>'/views/blocks/base_js.tpl'),
     )
 );
