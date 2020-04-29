@@ -9,7 +9,7 @@ class cookietrainer extends oxUBase {
             $jsCookies = $config->getRequestParameter('cookies');
             $serverCookies = $_COOKIE;
 
-            $client = Aggrosoft\CookieDatabase\Api\Client('de');
+            $client = new Aggrosoft\CookieDatabase\Api\Client('en');
             $infos = $client->getCookieInfos(['oxid' => array_keys($serverCookies)]);
 
             echo json_encode($infos);

@@ -1,4 +1,7 @@
 $(function(){
+
+
+
   var CC = window.CookieConsent
   var cc = new CC(Object.assign(window.COOKIE_COMPLIANCE_SETTINGS,{
     cookie: {

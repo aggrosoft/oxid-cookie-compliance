@@ -1,13 +1,13 @@
 <?php
 
-class ComplianceCookie extends oxBase {
+class compliancecookie extends oxBase {
 
     /**
      * Current class name.
      *
      * @var string
      */
-    protected $_sClassName = 'ComplianceCookie';
+    protected $_sClassName = 'compliancecookie';
 
     /**
      * Class constructor, initiates parent constructor (parent::oxI18n()).
