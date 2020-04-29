@@ -37,6 +37,14 @@
 .cc-bottom {
   bottom: 1em;
 }
+.cc-bottom-left {
+  bottom: 1em;
+  left: 1em;
+}
+.cc-bottom-right {
+  botom: 1em;
+  right: 1em;
+}
 
 /* links that are direct decendants should be displayed as block */
 .cc-floating > .cc-link {
@@ -108,7 +116,6 @@
   }
 }
 .cc-categories {
-  display: inline-flex;
   .cc-category{
     display  : flex;
     max-width: 100%;
