@@ -15,9 +15,10 @@
         <ul class="cc-categories">
             [{foreach from=$oViewConf->getCookieComplianceCategories() item=complianceCategory}]
             <li class="cc-category">
-                <button class="cc-btn" tabindex="0">
-                    <input type="checkbox" value="[{$complianceCategory}]"><span class="cc-btn-checkbox"></span>[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]
-                </button>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="check[{$complianceCategory}]">
+                    <label class="custom-control-label" for="check[{$complianceCategory}]">[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]</label>
+                </div>
             </li>
             [{/foreach}]
         </ul>
