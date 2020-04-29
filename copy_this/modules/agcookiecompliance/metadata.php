@@ -24,6 +24,7 @@ $aModule = array(
     ),
     'templates'   => array(
         'widget/cookiecompliance.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookiecompliance.tpl',
+        'widget/cookiecompliancedialog.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookiecompliancedialog.tpl',
     ),
     'events'       => array(
         'onActivate'   => 'agcookiecompliance_installer::onActivate',
