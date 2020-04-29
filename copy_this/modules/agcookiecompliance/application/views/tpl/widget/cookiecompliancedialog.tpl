@@ -23,11 +23,15 @@
         </ul>
         <button class="cc-btn cc-save">[{oxmultilang ident="COOKIE_COMPLIANCE_SAVE"}]</button>
         [{elseif $oViewConf->getCookieComplianceModuleSetting('sConsentType') === 'opt-in'}]
-        <button class="cc-btn cc-dismiss">[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]</button>
-        <button class="cc-btn cc-allow-all">[{oxmultilang ident="COOKIE_COMPLIANCE_ALLOW"}]</button>
+        <div class="btn-group">
+            <button class="cc-btn cc-dismiss">[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]</button>
+            <button class="cc-btn cc-allow-all">[{oxmultilang ident="COOKIE_COMPLIANCE_ALLOW"}]</button>
+        </div>
         [{elseif $oViewConf->getCookieComplianceModuleSetting('sConsentType') === 'opt-out'}]
-        <button class="cc-btn cc-dismiss">[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]</button>
-        <button class="cc-btn cc-disallow-all">[{oxmultilang ident="COOKIE_COMPLIANCE_DISALLOW"}]</button>
+        <div class="btn-group">
+            <button class="cc-btn cc-dismiss">[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]</button>
+            <button class="cc-btn cc-disallow-all">[{oxmultilang ident="COOKIE_COMPLIANCE_DISALLOW"}]</button>
+        </div>
         [{elseif $oViewConf->getCookieComplianceModuleSetting('sConsentType') === 'info'}]
         <button class="cc-btn cc-dismiss">[{oxmultilang ident="COOKIE_COMPLIANCE_DISMISS"}]</button>
         [{/if}]
