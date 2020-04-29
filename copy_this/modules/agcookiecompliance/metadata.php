@@ -46,5 +46,6 @@ $aModule = array(
     ),
     'blocks' => array(
         array('template' => 'layout/base.tpl','block'=>'base_js','file'=>'/views/blocks/base_js.tpl'),
+        array('template' => 'layout/base.tpl','block'=>'base_style','file'=>'/views/blocks/base_style.tpl'),
     )
 );
