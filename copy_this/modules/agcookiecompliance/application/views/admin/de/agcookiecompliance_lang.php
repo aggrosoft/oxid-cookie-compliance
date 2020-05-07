@@ -33,4 +33,5 @@ $aLang = array(
     'SHOP_MODULE_sConsentType_opt-out' => 'Opt-out',
     'SHOP_MODULE_sConsentType_info' => 'Nur Information',
     'SHOP_MODULE_sInfoLink' => 'Informations Link',
+    'SHOP_MODULE_blTrainingMode' => 'Lern Modus',
 );
