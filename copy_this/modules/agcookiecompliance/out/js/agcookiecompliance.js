@@ -1,23 +1,17 @@
 $(function(){
+  $('.cc-btn').click(function(){
 
+    document.cookie = 'cc-set=1; path=/;';
 
-
-  var CC = window.CookieConsent
-  var cc = new CC(Object.assign(window.COOKIE_COMPLIANCE_SETTINGS,{
-    cookie: {
-      // This is the name of this cookie - you can ignore this
-      name: 'cookieconsent_status',
-      // This is the url path that the cookie 'name' belongs to. The cookie can only be read at this location
-      path: '/',
-      domain: window.location.host,
-      expiryDays: 365,
-      secure: document.location.protocol === 'https:'
+    if($(this).hasClass('cc-save')){
+      var categories = $('.cc-category:checked').map(function(){ return $(this).val(); }).get();
+      document.cookie  = 'cc-categories=' + JSON.stringify(categories) + '; path=/;';
+    }else if($(this).hasClass('cc-allow-all')){
+      document.cookie = 'cc-categories=ALL; path=/;';
+    }else if($(this).hasClass('cc-disallow-all')){
+      document.cookie = 'cc-categories=NONE; path=/;';
     }
-  }));
-  cc.on( "initialized", ( ...args ) => console.log( args ) )
-  cc.on( "error", console.error )
-  cc.on( "popupOpened", () => console.log( "Popup Open" ) )
-  cc.on( "popupClosed", () => console.log( "Popup Closed" ) )
-  cc.on( "revokeChoice", () => console.log( "Popup Reset" ) )
-  cc.on( "statusChanged", ( ...args ) => console.log( args ) )
-})
+
+  });
+
+});

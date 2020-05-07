@@ -11,4 +11,10 @@ $aLang = array(
     'COOKIE_COMPLIANCE_LINK' => 'Mehr Informationen',
     'COOKIE_COMPLIANCE_POLICY' => 'Cookie Richtlinie',
     'COOKIE_COMPLIANCE_SAVE' => 'Speichern',
+    'COOKIE_COMPLIANCE_CATEGORY_ESSENTIAL' => 'Technisch notwendig',
+    'COOKIE_COMPLIANCE_CATEGORY_PERSONALIZATION' => 'Personalisierung',
+    'COOKIE_COMPLIANCE_CATEGORY_ANALYTICS' => 'Analyse',
+    'COOKIE_COMPLIANCE_CATEGORY_MARKETING' => 'Marketing',
+    'COOKIE_COMPLIANCE_CATEGORY_UNCATEGORIZED' => 'Unkategorisiert',
+
 );
