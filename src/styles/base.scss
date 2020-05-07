@@ -18,6 +18,12 @@
 
 .cc-revoke {
   z-index: 9999;
+  background-color: #333;
+  color: #fff;
+}
+.cc-revoke:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .cc-window.cc-static {
@@ -39,10 +45,6 @@
 .cc-revoke {
   padding: 0.5em;
 }
-.cc-revoke:hover {
-  text-decoration: underline;
-}
-
 .cc-header {
   font-size: 18px;
   font-weight: bold;

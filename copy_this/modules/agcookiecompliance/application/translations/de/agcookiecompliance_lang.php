@@ -6,6 +6,7 @@ $aLang = array(
     'COOKIE_COMPLIANCE_MESSAGE' => 'Diese Website verwendet Cookies um Ihnen die bestmöglichen Funktionen zu bieten.',
     'COOKIE_COMPLIANCE_DISMISS' => 'Verstanden',
     'COOKIE_COMPLIANCE_ALLOW' => 'Cookies erlauben',
+    'COOKIE_COMPLIANCE_ALLOW_ALL' => 'Alle erlauben',
     'COOKIE_COMPLIANCE_DISALLOW' => 'Cookies verbieten',
     'COOKIE_COMPLIANCE_DECLINE' => 'Verbieten',
     'COOKIE_COMPLIANCE_LINK' => 'Mehr Informationen',

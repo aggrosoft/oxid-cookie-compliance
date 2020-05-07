@@ -21,4 +21,40 @@ class agcookiecompliance_oxviewconfig extends agcookiecompliance_oxviewconfig_pa
         return $sValue ? $sValue : $sDefault;
     }
 
+    public function hasCookieConsented()
+    {
+        return $_COOKIE['cc-set'] == 1;
+    }
+
+    public function isCookieCategoryEnabled($sCategory)
+    {
+
+        if ($this->isCookieCategoryMandatory($sCategory)){
+            return true;
+        }
+
+        $cookie = $_COOKIE['cc-categories'];
+
+        if ($cookie) {
+
+            if ($cookie == 'ALL') {
+                return true;
+            }elseif ($cookie == 'NONE') {
+                return false;
+            }else{
+                $categories = json_decode($cookie);
+                return in_array($sCategory, $categories);
+            }
+        }
+
+        return false;
+    }
+
+    public function isCookieCategoryMandatory($sCategory)
+    {
+        if ($sCategory === 'ESSENTIAL'){
+            return true;
+        }
+    }
+
 }

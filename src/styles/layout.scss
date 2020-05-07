@@ -53,7 +53,6 @@
 
 .cc-floating .cc-message {
   display: block;
-  margin-bottom: 1em;
 }
 
 .cc-window.cc-floating .cc-compliance {
@@ -116,6 +115,9 @@
   }
 }
 .cc-categories {
+
+  padding-left: 0;
+
   .cc-category{
     display  : flex;
     max-width: 100%;
