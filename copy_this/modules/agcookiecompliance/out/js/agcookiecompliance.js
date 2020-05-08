@@ -23,6 +23,9 @@ $(function(){
       data: {
         cl: 'cookietrainer',
         fnc: 'remove'
+      },
+      success: function(){
+        location.reload();
       }
     })
 
