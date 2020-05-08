@@ -18,4 +18,22 @@ class compliancecookie extends oxBase {
         $this->init('compliancecookies');
     }
 
+    public function loadByCookieName($sLoadId) // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
+    {
+        $sTable = $this->getViewName();
+        $sShopId = $this->getShopId();
+        $aParams = [$sTable . '.oxcookie' => $sLoadId, $sTable . '.oxshopid' => $sShopId];
+
+        $sSelect = $this->buildSelectString($aParams);
+
+        $aData = \OxidEsales\Eshop\Core\DatabaseProvider::getDb(\OxidEsales\Eshop\Core\DatabaseProvider::FETCH_MODE_ASSOC)->getRow($sSelect);
+
+        if ($aData) {
+            $this->assign($aData);
+            return true;
+        }
+
+        return false;
+    }
+
 }

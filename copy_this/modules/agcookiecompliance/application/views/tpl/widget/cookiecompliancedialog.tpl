@@ -17,12 +17,14 @@
         [{if $oViewConf->getCookieComplianceModuleSetting('sConsentType') === 'categories'}]
         <ul class="cc-categories">
             [{foreach from=$oViewConf->getCookieComplianceCategories() item=complianceCategory}]
+            [{if $oViewConf->isCookieCategoryUsed($complianceCategory)}]
             <li class="cc-category">
                 <div class="custom-control custom-checkbox">
                     <input value="[{$complianceCategory}]" type="checkbox" class="cc-category custom-control-input" id="cc-check[{$complianceCategory}]" [{if $oViewConf->isCookieCategoryEnabled($complianceCategory)}]checked="checked"[{/if}] [{if $oViewConf->isCookieCategoryMandatory($complianceCategory)}]disabled[{/if}]>
                     <label class="custom-control-label" for="cc-check[{$complianceCategory}]">[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]</label>
                 </div>
             </li>
+            [{/if}]
             [{/foreach}]
         </ul>
         <div class="cc-btn-group btn-group d-flex">

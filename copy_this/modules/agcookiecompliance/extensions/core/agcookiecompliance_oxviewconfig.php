@@ -57,4 +57,10 @@ class agcookiecompliance_oxviewconfig extends agcookiecompliance_oxviewconfig_pa
         }
     }
 
+    public function isCookieCategoryUsed($sCategory) {
+        $oDb = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
+        $sSelect = "SELECT COUNT(*) FROM compliancecookies WHERE OXCATEGORY = " . $oDb->quote($sCategory);
+        return $oDb->getOne($sSelect) > 0;
+    }
+
 }
