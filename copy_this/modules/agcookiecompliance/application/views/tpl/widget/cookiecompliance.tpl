@@ -43,6 +43,7 @@
 [{capture assign=trainingScript}]
 [{strip}]
 $(function(){
+    window.COOKIE_COMPLIANCE_URL = '[{$oViewConf->getSelfActionLink()}]';
     $.ajax({
         url: '[{$oViewConf->getSelfActionLink()}]',
         method: 'POST',

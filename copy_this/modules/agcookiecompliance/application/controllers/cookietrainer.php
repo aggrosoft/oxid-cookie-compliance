@@ -18,7 +18,7 @@ class cookietrainer extends oxUBase {
         if($config->getShopConfVar('blTrainingMode', null, 'module:agcookiecompliance')) {
 
             $parser = new CookieParser();
-            $jsCookies = $parser->parseCookie($config->getRequestParameter('cookies'));
+            $jsCookies = $parser->parseCookie($config->getRequestParameter('cookies', true));
             $cookies = array_merge($_COOKIE, $jsCookies['cookies']);
 
             $apiCookies = array_diff(array_keys($cookies), self::ADMIN_COOKIES, self::FRONTEND_COOKIES);
@@ -73,6 +73,25 @@ class cookietrainer extends oxUBase {
             echo json_encode($createdCookies);
             exit();
         }
+    }
+
+    public function remove() {
+        $helper = oxNew('cookiehelper');
+        $categories = $helper->getCookieComplianceCategories();
+
+        foreach($categories as $category) {
+            if (!$helper->isCookieCategoryEnabled($category)){
+                $list = oxNew('compliancecookielist');
+                $list->loadCategoryCookies($category);
+
+                foreach($list as $cookie){
+                    setcookie($cookie->compliancecookies__oxcookie->value, '', time()-3600, '/');
+                    setcookie($cookie->compliancecookies__oxcookie->value, '', time()-3600, '/', '.'.$_SERVER['SERVER_NAME']);
+                }
+            }
+        }
+
+        exit();
     }
 
     protected function matchPurposeId($pid) {

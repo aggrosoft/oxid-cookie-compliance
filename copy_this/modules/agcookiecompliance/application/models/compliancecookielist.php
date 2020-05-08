@@ -12,4 +12,14 @@ class compliancecookielist extends oxList {
         parent::__construct('compliancecookie');
     }
 
+    public function loadCategoryCookies($sCategory)
+    {
+        $sFields = $this->getBaseObject()->getSelectFields();
+        $sTable    = getViewName('compliancecookies');
+        $db = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
+
+        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxcategory = " . $db->quote($sCategory);
+        $this->selectString($sQ);
+    }
+
 }

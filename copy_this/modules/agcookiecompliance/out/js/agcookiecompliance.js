@@ -17,6 +17,15 @@ $(function(){
     $('.cc-window').hide();
     $('.cc-revoke').css('display','');
 
+    $.ajax({
+      url: window.COOKIE_COMPLIANCE_URL,
+      method: 'POST',
+      data: {
+        cl: 'cookietrainer',
+        fnc: 'remove'
+      }
+    })
+
   });
 
   $('.cc-revoke').hover(function(){ $(this).toggleClass('cc-active') });

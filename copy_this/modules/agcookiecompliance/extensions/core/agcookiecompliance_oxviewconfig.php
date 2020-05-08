@@ -35,7 +35,7 @@ class agcookiecompliance_oxviewconfig extends agcookiecompliance_oxviewconfig_pa
     }
 
     public function getViewThemeParam($sParam){
-        if ($sParam === 'sGoogleMapsAddr' && !self::isCookieCategoryEnabled('ANALYTICS')){
+        if (($sParam === 'sGoogleMapsAddr' || $sParam === 'sGATrackingId') && !self::isCookieCategoryEnabled('ANALYTICS')){
             return false;
         }
         return parent::getViewThemeParam($sParam);
