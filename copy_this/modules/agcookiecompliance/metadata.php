@@ -22,6 +22,7 @@ $aModule = array(
         'compliancecookie' => 'agcookiecompliance/application/models/compliancecookie.php',
         'compliancecookielist' => 'agcookiecompliance/application/models/compliancecookielist.php',
         'cookieparser' => 'agcookiecompliance/application/core/cookieparser.php',
+        'cookiehelper' => 'agcookiecompliance/application/core/cookiehelper.php',
     ),
     'templates'   => array(
         'widget/cookiecompliance.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookiecompliance.tpl',

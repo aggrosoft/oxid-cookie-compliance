@@ -3,17 +3,6 @@
 class agcookiecompliance_oxviewconfig extends agcookiecompliance_oxviewconfig_parent
 {
 
-    public function getCookieComplianceCategories()
-    {
-        return [
-            'ESSENTIAL',
-            'PERSONALIZATION',
-            'ANALYTICS',
-            'MARKETING',
-            'UNCATEGORIZED'
-        ];
-    }
-
     public function getCookieComplianceModuleSetting($sSetting, $sDefault = '')
     {
         $oConfig = $this->getConfig();
@@ -21,46 +10,35 @@ class agcookiecompliance_oxviewconfig extends agcookiecompliance_oxviewconfig_pa
         return $sValue ? $sValue : $sDefault;
     }
 
+    public function getCookieComplianceCategories()
+    {
+        return CookieHelper::getCookieComplianceCategories();
+    }
+
     public function hasCookieConsented()
     {
-        return $_COOKIE['cc-set'] == 1;
+        return CookieHelper::hasCookieConsented();
     }
 
     public function isCookieCategoryEnabled($sCategory)
     {
-
-        if ($this->isCookieCategoryMandatory($sCategory)){
-            return true;
-        }
-
-        $cookie = $_COOKIE['cc-categories'];
-
-        if ($cookie) {
-
-            if ($cookie == 'ALL') {
-                return true;
-            }elseif ($cookie == 'NONE') {
-                return false;
-            }else{
-                $categories = json_decode($cookie);
-                return in_array($sCategory, $categories);
-            }
-        }
-
-        return false;
+        return CookieHelper::isCookieCategoryEnabled($sCategory);
     }
 
     public function isCookieCategoryMandatory($sCategory)
     {
-        if ($sCategory === 'ESSENTIAL'){
-            return true;
-        }
+        return CookieHelper::isCookieCategoryMandatory($sCategory);
     }
 
     public function isCookieCategoryUsed($sCategory) {
-        $oDb = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
-        $sSelect = "SELECT COUNT(*) FROM compliancecookies WHERE OXCATEGORY = " . $oDb->quote($sCategory);
-        return $oDb->getOne($sSelect) > 0;
+        return CookieHelper::isCookieCategoryUsed($sCategory);
+    }
+
+    public function getViewThemeParam($sParam){
+        if ($sParam === 'sGoogleMapsAddr' && !self::isCookieCategoryEnabled('ANALYTICS')){
+            return false;
+        }
+        return parent::getViewThemeParam($sParam);
     }
 
 }
