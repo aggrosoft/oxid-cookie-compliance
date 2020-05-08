@@ -6,7 +6,8 @@ class cookietrainer extends oxUBase {
         $config = $this->getConfig();
         if($config->getShopConfVar('blTrainingMode', null, 'module:agcookiecompliance')) {
 
-            $jsCookies = $config->getRequestParameter('cookies');
+            $parser = new CookieParser();
+            $jsCookies = $parser->parseCookie($config->getRequestParameter('cookies'));
             $serverCookies = $_COOKIE;
 
             $client = new Aggrosoft\CookieDatabase\Api\Client('en');
