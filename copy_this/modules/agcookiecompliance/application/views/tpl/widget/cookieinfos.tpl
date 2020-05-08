@@ -12,10 +12,10 @@
         <tbody>
             [{foreach from=$cookies item=cookie}]
             <tr>
-                <td>[{$cookie->compliancecookie__oxcookie->value}]</td>
-                <td>[{$cookie->compliancecookie__oxservice->value}]</td>
-                <td>[{$cookie->compliancecookie__oxdescription->value}]</td>
-                <td>[{$cookie->compliancecookie__oxretention->value}]</td>
+                <td>[{$cookie->compliancecookies__oxcookie->value}]</td>
+                <td>[{$cookie->compliancecookies__oxservice->value}]</td>
+                <td>[{$cookie->compliancecookies__oxdescription->value}]</td>
+                <td>[{$cookie->compliancecookies__oxretention->value}]</td>
             </tr>
             [{/foreach}]
         </tbody>

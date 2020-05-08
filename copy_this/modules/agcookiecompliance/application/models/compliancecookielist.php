@@ -34,4 +34,10 @@ class compliancecookielist extends oxList {
         $this->selectString($sQ);
     }
 
+    protected function getShopId(){
+        $oConfig = \OxidEsales\Eshop\Core\Registry::getConfig();
+        $oShop = $oConfig->getActiveShop();
+        return $oShop->getId();
+    }
+
 }
