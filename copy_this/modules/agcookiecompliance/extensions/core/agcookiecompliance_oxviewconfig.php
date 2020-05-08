@@ -41,4 +41,10 @@ class agcookiecompliance_oxviewconfig extends agcookiecompliance_oxviewconfig_pa
         return parent::getViewThemeParam($sParam);
     }
 
+    public function getComplianceCookies () {
+        $list = oxNew('compliancecookielist');
+        $list->loadAllCookies();
+        return $list;
+    }
+
 }
