@@ -7,6 +7,7 @@ $iLangNr = 0;
 // -------------------------------
 $aLang = array(
     'charset' => 'UTF-8',
+    'tbclshop_cookies' => 'Cookies',
     'SHOP_MODULE_GROUP_agcookiecompliance_layout' => 'Layout',
     'SHOP_MODULE_GROUP_agcookiecompliance_colors' => 'Farben',
     'SHOP_MODULE_GROUP_agcookiecompliance_settings' => 'Einstellungen',

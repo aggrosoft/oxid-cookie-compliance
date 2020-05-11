@@ -23,11 +23,17 @@ $aModule = array(
         'compliancecookielist' => 'agcookiecompliance/application/models/compliancecookielist.php',
         'cookieparser' => 'agcookiecompliance/application/core/cookieparser.php',
         'cookiehelper' => 'agcookiecompliance/application/core/cookiehelper.php',
+        'admin_compliancecookies' => 'agcookiecompliance/application/controllers/admin/admin_compliancecookies.php',
+        'compliancecookies_list' => 'agcookiecompliance/application/controllers/admin/compliancecookies_list.php',
+        'compliancecookies_main' => 'agcookiecompliance/application/controllers/admin/compliancecookies_main.php',
     ),
     'templates'   => array(
         'widget/cookiecompliance.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookiecompliance.tpl',
         'widget/cookiecompliancedialog.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookiecompliancedialog.tpl',
         'widget/cookieinfos.tpl' => 'agcookiecompliance/application/views/tpl/widget/cookieinfos.tpl',
+        'compliancecookies.tpl' => 'agcookiecompliance/application/views/admin/tpl/compliancecookies.tpl',
+        'compliancecookies_list.tpl' => 'agcookiecompliance/application/views/admin/tpl/compliancecookies_list.tpl',
+        'compliancecookies_main.tpl' => 'agcookiecompliance/application/views/admin/tpl/compliancecookies_main.tpl',
     ),
     'events'       => array(
         'onActivate'   => 'agcookiecompliance_installer::onActivate',

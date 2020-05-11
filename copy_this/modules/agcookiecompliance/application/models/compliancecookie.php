@@ -1,6 +1,6 @@
 <?php
 
-class compliancecookie extends oxBase {
+class compliancecookie extends oxI18n {
 
     /**
      * Current class name.
@@ -18,7 +18,7 @@ class compliancecookie extends oxBase {
         $this->init('compliancecookies');
     }
 
-    public function loadByCookieName($sLoadId) // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
+    public function loadByCookieName($sLoadId)
     {
         $sTable = $this->getViewName();
         $sShopId = $this->getShopId();

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OX>
+    <OXMENU id="NAVIGATION_ESHOPADMIN">
+        <MAINMENU id="mxmainmenu">
+            <SUBMENU id="mxcompliancecookies" cl="admin_compliancecookies" list="compliancecookies_list">
+                <TAB id="tbclshop_cookies" cl="compliancecookies_main" />
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>
