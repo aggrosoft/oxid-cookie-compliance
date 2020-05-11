@@ -22,7 +22,7 @@
 
 <div id="liste">
     <form name="search" id="search" action="[{$oViewConf->getSelfLink()}]" method="post">
-        [{include file="_formparams.tpl" cl="compliancecookie_list" lstrt=$lstrt actedit=$actedit oxid=$oxid fnc="" language=$actlang editlanguage=$actlang}]
+        [{include file="_formparams.tpl" cl="compliancecookies_list" lstrt=$lstrt actedit=$actedit oxid=$oxid fnc="" language=$actlang editlanguage=$actlang}]
         <table cellspacing="0" cellpadding="0" border="0" width="100%">
             <colgroup>
                 [{block name="admin_compliancecookie_list_colgroup"}]
@@ -45,7 +45,12 @@
                             <input class="listedit" type="text" size="20" maxlength="128" name="where[compliancecookies][oxcookie]" value="[{$where.compliancecookies.oxcookie}]" [{$readonly}]>
                         </div></div>
                 </td>
-                <td valign="top" class="listfilter" colspan="2">
+                <td valign="top" class="listfilter" height="20">
+                    <div class="r1"><div class="b1">
+                            <input class="listedit" type="text" size="20" maxlength="128" name="where[compliancecookies][oxtitle]" value="[{$where.compliancecookies.oxtitle}]" [{$readonly}]>
+                        </div></div>
+                </td>
+                <td valign="top" class="listfilter">
                     <div class="r1"><div class="b1">
                             <div class="find">
                                 <select name="changelang" class="editinput" onChange="Javascript:top.oxid.admin.changeLanguage();">
@@ -62,14 +67,16 @@
             <tr>
                 [{block name="admin_compliancecookie_list_sorting"}]
                 <td class="listheader first" height="15" width="30" align="center"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'compliancecookies', 'oxactive', 'asc');document.search.submit();" class="listheader">[{oxmultilang ident="GENERAL_ACTIVTITLE"}]</a></td>
-                <td class="listheader" height="15">&nbsp;<a href="Javascript:top.oxid.admin.setSorting( document.search, 'compliancecookies', 'oxcategory', 'asc');document.search.submit();" class="listheader">[{oxmultilang ident="GENERAL_TYPE"}]</a></td>
-                <td class="listheader" colspan="3"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'compliancecookies', 'oxcookie', 'asc');document.search.submit();" class="listheader">[{oxmultilang ident="GENERAL_NAME"}]</a></td>
+                <td class="listheader" height="15">&nbsp;<a href="Javascript:top.oxid.admin.setSorting( document.search, 'compliancecookies', 'oxcategory', 'asc');document.search.submit();" class="listheader">[{oxmultilang ident="GENERAL_CATEGORY"}]</a></td>
+                <td class="listheader"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'compliancecookies', 'oxcookie', 'asc');document.search.submit();" class="listheader">[{oxmultilang ident="GENERAL_IDENT"}]</a></td>
+                <td class="listheader" colspan="2"><a href="Javascript:top.oxid.admin.setSorting( document.search, 'compliancecookies', 'oxtitle', 'asc');document.search.submit();" class="listheader">[{oxmultilang ident="GENERAL_NAME"}]</a></td>
                 [{/block}]
             </tr>
 
             [{assign var="blWhite" value=""}]
             [{assign var="_cnt" value=0}]
             [{foreach from=$mylist item=listitem}]
+            [{assign var=complianceCategory value=$listitem->compliancecookies__oxcategory->value}]
             [{assign var="_cnt" value=$_cnt+1}]
             <tr id="row.[{$_cnt}]">
                 [{block name="admin_compliancecookie_list_item"}]
@@ -82,8 +89,9 @@
                 [{assign var="listclass" value=listitem4}]
                 [{/if}]
                 <td valign="top" class="[{$listclass}][{if $listitem->compliancecookies__oxactive->value == 1}] active[{/if}]" height="15"><div class="listitemfloating">&nbsp</a></div></td>
-                <td valign="top" class="[{$listclass}]" height="15"><div class="listitemfloating">&nbsp;<a href="Javascript:top.oxid.admin.editThis('[{$listitem->compliancecookies__oxid->value}]');" class="[{$listclass}]">[{if $listitem->compliancecookies__oxtype->value == "WRAP"}][{oxmultilang ident="compliancecookie_LIST_PRESENTPACKUNG"}][{elseif $listitem->compliancecookies__oxtype->value == "CARD"}][{oxmultilang ident="GENERAL_CARD"}][{/if}]</a></div></td>
-                <td valign="top" class="[{$listclass}]"><div class="listitemfloating"><a href="Javascript:top.oxid.admin.editThis('[{$listitem->compliancecookies__oxid->value}]');" class="[{$listclass}]">[{if !$listitem->compliancecookies__oxname->value}]-[{oxmultilang ident="GENERAL_NONAME"}]-[{else}][{$listitem->compliancecookies__oxname->value}][{/if}]</a></div></td>
+                <td valign="top" class="[{$listclass}]" height="15"><div class="listitemfloating">&nbsp;<a href="Javascript:top.oxid.admin.editThis('[{$listitem->compliancecookies__oxid->value}]');" class="[{$listclass}]">[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]</a></div></td>
+                <td valign="top" class="[{$listclass}]"><div class="listitemfloating"><a href="Javascript:top.oxid.admin.editThis('[{$listitem->compliancecookies__oxid->value}]');" class="[{$listclass}]">[{$listitem->compliancecookies__oxcookie->value}]</a></div></td>
+                <td valign="top" class="[{$listclass}]"><div class="listitemfloating"><a href="Javascript:top.oxid.admin.editThis('[{$listitem->compliancecookies__oxid->value}]');" class="[{$listclass}]">[{$listitem->compliancecookies__oxtitle->value}]</a></div></td>
 
                 <td class="[{$listclass}]">
                     [{if !$readonly}]

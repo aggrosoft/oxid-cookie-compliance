@@ -35,6 +35,9 @@ class compliancecookies_main extends oxAdminDetails
             }
         }
 
+        $this->_aViewData['allCategories'] = CookieHelper::getCookieComplianceCategories();
+
+
         return "compliancecookies_main.tpl";
     }
 

@@ -32,9 +32,20 @@
                         <td class="edittext" width="90">
                             [{oxmultilang ident="GENERAL_ACTIVE"}]
                         </td>
-                        <input class="edittext" type="checkbox" name="editval[compliancecookies__oxactive]" value='1' [{if $edit->compliancecookies__oxactive->value == 1}]checked[{/if}] [{$readonly}]>
                         <td class="edittext" colspan="2">
+                            <input type="hidden" name="editval[compliancecookies__oxactive]" value='0'>
+                            <input class="edittext" type="checkbox" name="editval[compliancecookies__oxactive]" value='1' [{if $edit->compliancecookies__oxactive->value == 1}]checked[{/if}] [{$readonly}]>
+
                             [{oxinputhelp ident="HELP_GENERAL_ACTIVE"}]
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext">
+                            [{oxmultilang ident="GENERAL_IDENT"}]
+                        </td>
+                        <td class="edittext" colspan="2">
+                            <input type="text" class="editinput" size="25" maxlength="[{$edit->compliancecookies__oxcookie->fldmax_length}]" name="editval[compliancecookies__oxcookie]" value="[{$edit->compliancecookies__oxcookie->value}]" [{$readonly}]>
+                            [{oxinputhelp ident="HELP_GENERAL_IDENT"}]
                         </td>
                     </tr>
                     <tr>
@@ -42,7 +53,7 @@
                             [{oxmultilang ident="GENERAL_NAME"}]
                         </td>
                         <td class="edittext" colspan="2">
-                            <input type="text" class="editinput" size="25" maxlength="[{$edit->compliancecookies__oxname->fldmax_length}]" name="editval[compliancecookies__oxname]" value="[{$edit->compliancecookies__oxname->value}]" [{$readonly}]>
+                            <input type="text" class="editinput" size="25" maxlength="[{$edit->compliancecookies__oxtitle->fldmax_length}]" name="editval[compliancecookies__oxtitle]" value="[{$edit->compliancecookies__oxtitle->value}]" [{$readonly}]>
                             [{oxinputhelp ident="HELP_GENERAL_NAME"}]
                         </td>
                     </tr>
@@ -51,8 +62,41 @@
                             [{oxmultilang ident="GENERAL_CATEGORY"}]
                         </td>
                         <td class="edittext" colspan="2">
-                            <input type="text" class="editinput" size="10" maxlength="[{$edit->compliancecookies__oxcategory->fldmax_length}]" name="editval[compliancecookies__oxcategory]" value="[{$edit->compliancecookies__oxcategory->value}]" [{$readonly}]>
+                            <select name="editval[compliancecookies__oxcategory]" class="editinput">
+                                [{foreach from=$allCategories item=complianceCategory}]
+                                    <option value="[{$complianceCategory}]">[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]</option>
+                                [{/foreach}]
+                            </select>
                             [{oxinputhelp ident="HELP_GENERAL_CATEGORY"}]
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="edittext">
+                            [{oxmultilang ident="COOKIE_COMPLIANCE_SERVICE"}]
+                        </td>
+                        <td class="edittext" colspan="2">
+                            <input type="text" class="editinput" size="25" maxlength="[{$edit->compliancecookies__oxservice->fldmax_length}]" name="editval[compliancecookies__oxservice]" value="[{$edit->compliancecookies__oxservice->value}]" [{$readonly}]>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="edittext">
+                            [{oxmultilang ident="GENERAL_DESCRIPTION"}]
+                        </td>
+                        <td class="edittext" colspan="2">
+                            <input type="text" class="editinput" size="25" maxlength="[{$edit->compliancecookies__oxdescription->fldmax_length}]" name="editval[compliancecookies__oxdescription]" value="[{$edit->compliancecookies__oxdescription->value}]" [{$readonly}]>
+                            [{oxinputhelp ident="HELP_GENERAL_DESCRIPTION"}]
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="edittext">
+                            [{oxmultilang ident="COOKIE_COMPLIANCE_RETENTION"}]
+                        </td>
+                        <td class="edittext" colspan="2">
+                            <input type="text" class="editinput" size="25" maxlength="[{$edit->compliancecookies__oxretention->fldmax_length}]" name="editval[compliancecookies__oxretention]" value="[{$edit->compliancecookies__oxretention->value}]" [{$readonly}]>
+
                         </td>
                     </tr>
 

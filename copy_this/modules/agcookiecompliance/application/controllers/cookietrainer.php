@@ -44,6 +44,7 @@ class cookietrainer extends oxUBase {
                             $info = $cookieInfos->$cookie;
                             $aData = [
                                 'oxshopid' => $this->getShopId(),
+                                'oxactive' => 1,
                                 'oxcookie' => $cookie,
                                 'oxtitle' => $info->name,
                                 'oxcategory' => $this->matchPurposeId($info->purposeID),
@@ -54,6 +55,7 @@ class cookietrainer extends oxUBase {
                         }else{
                             $aData = [
                                 'oxshopid' => $this->getShopId(),
+                                'oxactive' => 1,
                                 'oxcookie' => $cookie,
                                 'oxtitle' => $cookie,
                                 'oxcategory' => $this->matchPurposeId(null)
@@ -106,6 +108,7 @@ class cookietrainer extends oxUBase {
             $oLang = \OxidEsales\Eshop\Core\Registry::getLang();
             return [
                 'oxshopid' => $this->getShopId(),
+                'oxactive' => 1,
                 'oxcookie' => $cookie,
                 'oxtitle' => $oLang->translateString('COOKIE_COMPLIANCE_COOKIE_TITLE_'.strtoupper($cookie)),
                 'oxcategory' => $oLang->translateString('COOKIE_COMPLIANCE_COOKIE_CATEGORY_'.strtoupper($cookie)),

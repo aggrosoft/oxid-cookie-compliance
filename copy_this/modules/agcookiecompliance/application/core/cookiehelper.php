@@ -51,7 +51,7 @@ class CookieHelper {
 
     public static function isCookieCategoryUsed($sCategory) {
         $oDb = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
-        $sSelect = "SELECT COUNT(*) FROM compliancecookies WHERE OXCATEGORY = " . $oDb->quote($sCategory);
+        $sSelect = "SELECT COUNT(*) FROM compliancecookies WHERE OXACTIVE = 1 AND OXCATEGORY = " . $oDb->quote($sCategory);
         return $oDb->getOne($sSelect) > 0;
     }
 
