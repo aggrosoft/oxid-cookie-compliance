@@ -1,6 +1,6 @@
 {
   "name": "oxid-cookie-compliance",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "release": "dotenv release-it -VV",
