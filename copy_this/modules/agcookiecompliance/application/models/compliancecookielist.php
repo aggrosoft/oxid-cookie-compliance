@@ -19,7 +19,7 @@ class compliancecookielist extends oxList {
         $sTable    = getViewName('compliancecookies');
         $db = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
 
-        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxshopid = $sShopId";
+        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxactive = 1 AND $sTable.oxshopid = $sShopId";
         $this->selectString($sQ);
     }
 
