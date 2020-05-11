@@ -64,7 +64,7 @@
                         <td class="edittext" colspan="2">
                             <select name="editval[compliancecookies__oxcategory]" class="editinput">
                                 [{foreach from=$allCategories item=complianceCategory}]
-                                    <option value="[{$complianceCategory}]">[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]</option>
+                                    <option value="[{$complianceCategory}]" [{if $complianceCategory === $edit->compliancecookies__oxcategory->value}]selected="selected"[{/if}]>[{oxmultilang ident="COOKIE_COMPLIANCE_CATEGORY_"|cat:$complianceCategory}]</option>
                                 [{/foreach}]
                             </select>
                             [{oxinputhelp ident="HELP_GENERAL_CATEGORY"}]
