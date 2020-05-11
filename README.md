@@ -1,5 +1,3 @@
-# oxid-cookie-compliance
-
 # OXID cookie compliance modul
 
 Free OXID eShop 4/5/6 module for GDRP compliance.
