@@ -29,6 +29,8 @@ $(function(){
       }
     })
 
+    return false;
+
   });
 
   $('.cc-revoke').hover(function(){ $(this).toggleClass('cc-active') });
@@ -36,6 +38,7 @@ $(function(){
   $('.cc-revoke').click(function(){
     $('.cc-revoke').hide();
     $('.cc-window').css('display','');
+    return false;
   });
 
 });
