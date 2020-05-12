@@ -19,7 +19,7 @@ class cookietrainer extends oxUBase {
 
             $parser = new CookieParser();
             $jsCookies = $parser->parseCookie($config->getRequestParameter('cookies', true));
-            $cookies = array_merge($_COOKIE, $jsCookies['cookies']);
+            $cookies = is_array($jsCookies['cookies']) ? array_merge($_COOKIE, $jsCookies['cookies']) : $_COOKIE;
 
             $apiCookies = array_diff(array_keys($cookies), self::ADMIN_COOKIES, self::FRONTEND_COOKIES);
 
