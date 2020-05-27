@@ -6,6 +6,9 @@ $(function(){
     if($(this).hasClass('cc-save')){
       var categories = $('.cc-category:checked').map(function(){ return $(this).val(); }).get();
       document.cookie  = 'cc-categories=' + JSON.stringify(categories) + '; max-age=31536000; path=/;';
+    }else if($(this).hasClass('cc-allow-only')){
+      var categories = $(this).data('cc-categories');
+      document.cookie  = 'cc-categories=' + JSON.stringify(categories) + '; max-age=31536000; path=/;';
     }else if($(this).hasClass('cc-allow-all')){
       $('.cc-category').prop('checked',true);
       document.cookie = 'cc-categories=ALL; max-age=31536000; path=/;';
