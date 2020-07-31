@@ -14,7 +14,7 @@ class agcookiecompliance_installer
     {
         $query = 'CREATE TABLE IF NOT EXISTS compliancecookies (
                     OXID CHAR(32) character set latin1 collate latin1_general_ci NOT NULL, 
-                    OXSHOPID int(11) NOT NULL default 1,
+                    OXSHOPID CHAR(32) NOT NULL default "oxbaseshop",
                     OXCOOKIE VARCHAR(255), 
                     OXACTIVE TINYINT(1), 
                     OXTITLE VARCHAR(255), 
