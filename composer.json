@@ -5,6 +5,7 @@
   "description": "GDPR Cookie Compliance",
   "license": "MIT",
   "require": {
+  	"php": ">=7.1",
     "aggrosoft/cookiedatabase-lib": "^1.0.0"
   },
   "authors": [
