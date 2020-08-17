@@ -22,5 +22,7 @@ class agcookiecompliance_installer {
                     PRIMARY KEY  (`OXID`)
                  ) ENGINE=InnoDB';
         \OxidEsales\Eshop\Core\DatabaseProvider::getDb()->execute($query);
+        $oDbHandler = oxNew(\OxidEsales\Eshop\Core\DbMetaDataHandler::class);
+        $oDbHandler->updateViews();
     }
 }
