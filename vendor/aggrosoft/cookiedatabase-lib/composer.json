@@ -1,0 +1,19 @@
+{
+  "name": "aggrosoft/cookiedatabase-lib",
+  "description": "Connect to cookiedatabase.org API",
+  "license": "MIT",
+  "version": "1.0.1",
+  "require": {
+    "ext-curl": "*",
+    "kriswallsmith/buzz": "^1.1.0",
+    "nyholm/psr7": "^1.2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aggrosoft\\CookieDatabase\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9"
+  }
+}

@@ -1,9 +1,9 @@
-# OXID cookie compliance modul
+# OXID cookie compliance modul for OXID 4/5
 
-Free OXID eShop 6 module for GDRP compliance.
+Free OXID eShop module for GDRP compliance.
 
 ## Installation
-- Get module by composer `composer require aggrosoft/oxid-cookie-compliance`
+- Copy module files to `shoproot/modules/agcookiecompliance/`
 
 ## Configuration
 - See module settings
