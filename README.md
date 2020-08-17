@@ -12,4 +12,5 @@ Free OXID eShop module for GDRP compliance.
 - add `[{include file="widget/cookieinfos.tpl"}]` to `oxsecurityinfo` cms-page
 
 ## Notice
+- Connection to https://cookiedatabase.org/ works only with php >= 71
 - Template compatibility only for wave theme, feel free to contribute for other themes ;-)

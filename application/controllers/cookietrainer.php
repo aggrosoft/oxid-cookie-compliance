@@ -1,5 +1,8 @@
 <?php
-include_once __DIR__ . '/../../vendor/autoload.php';
+
+if(phpversion() >= 7.1) {
+	include_once __DIR__ . '/../../vendor/autoload.php';
+}
 
 class cookietrainer extends oxUBase {
 
@@ -24,7 +27,7 @@ class cookietrainer extends oxUBase {
 
             $apiCookies = array_diff(array_keys($cookies), self::ADMIN_COOKIES, self::FRONTEND_COOKIES);
 
-            if (count($apiCookies)){
+            if (count($apiCookies) && phpversion() >= 7.1){
                 $client = new Aggrosoft\CookieDatabase\Api\Client('en');
                 $infos = $client->getCookieInfos(['oxid' => $apiCookies]);
 
