@@ -19,7 +19,7 @@ class compliancecookielist extends oxList {
         $sTable    = getViewName('compliancecookies');
         $db = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
 
-        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxactive = 1 AND $sTable.oxshopid = $sShopId";
+        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxactive = 1 AND $sTable.oxshopid = $sShopId ORDER BY OXCATEGORY DESC, OXCOOKIE ASC ";
         $this->selectString($sQ);
     }
 
@@ -30,7 +30,7 @@ class compliancecookielist extends oxList {
         $sTable    = getViewName('compliancecookies');
         $db = \OxidEsales\Eshop\Core\DatabaseProvider::getDb();
 
-        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxshopid = $sShopId AND $sTable.oxcategory = " . $db->quote($sCategory);
+        $sQ = "SELECT $sFields FROM $sTable WHERE $sTable.oxshopid = $sShopId AND $sTable.oxcategory = " . $db->quote($sCategory).' ORDER BY OXCOOKIE ASC';
         $this->selectString($sQ);
     }
 
