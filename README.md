@@ -9,7 +9,11 @@ Free OXID eShop module for GDRP compliance.
 - See module settings
 - Activate "Lern-Modus" and make an test order, after this deacticate "Lern-Modus"
 - Change cookie settings in general shop data --> cookies
-- add `[{include file="widget/cookieinfos.tpl"}]` to `oxsecurityinfo` cms-page
+- Add `[{include file="widget/cookieinfos.tpl"}]` to `oxsecurityinfo` cms-page
+- "Lern-Modus" will handle the oxid standard cookies (ESSENTIAL, Google Analytics)
+- Add extra cookies in the backend module    
+- Customize the including of the extra cookies in templates by using `[{if $oViewConf->isCookieCategoryEnabled('MARKETING') == 1}][{/if}]`
+- Possible cats are ESSENTIAL,PERSONALIZATION,ANALYTICS,MARKETING,UNCATEGORIZED
 
 ## Notice
 - Template compatibility only for wave theme, feel free to contribute for other themes ;-)
