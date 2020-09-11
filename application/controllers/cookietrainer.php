@@ -101,7 +101,7 @@ class cookietrainer extends oxUBase {
     }
 
     protected function matchPurposeId($pid) {
-        if ($pid && isset(self::PURPOSE_MAP[$pid])){
+        if ($pid && null !== self::PURPOSE_MAP[$pid]){
             return self::PURPOSE_MAP[$pid];
         }
         return 'UNCATEGORIZED';
