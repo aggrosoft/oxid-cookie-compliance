@@ -22,6 +22,7 @@ $aLang = array(
     'SHOP_MODULE_sBannerTheme_block' => 'Eckig',
     'SHOP_MODULE_sBannerTheme_edgeless' => 'Rund',
     'SHOP_MODULE_sBannerTheme_classic' => 'Klassisch',
+    'SHOP_MODULE_sBannerTheme_custom' => 'Benutzerdefiniert',
     'SHOP_MODULE_sBannerBackgroundColor' => 'Banner Hintergrund',
     'SHOP_MODULE_sBannerTextColor' => 'Banner Text',
     'SHOP_MODULE_sButtonBackgroundColor' => 'Button Hintergrund',
