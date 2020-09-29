@@ -38,7 +38,7 @@
 [{/capture}]
 [{oxscript add=$complianceSettings}]
 [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/js/agcookiecompliance.min.js'}]
-[{include file="widget/cookiecompliancedialog.tpl"}]
+[{oxid_include_dynamic file="widget/cookiecompliancedialog.tpl"}]
 [{if $oViewConf->getCookieComplianceModuleSetting('blTrainingMode')}]
 [{capture assign=trainingScript}]
 [{strip}]
