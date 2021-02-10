@@ -1,4 +1,4 @@
-[{oxstyle include=$oViewConf->getModuleUrl('agcookiecompliance')|cat:'out/css/agcookiecompliance.min.css'}]
+[{oxstyle include=$oViewConf->getModuleUrl('agcookiecompliance', 'out/css/agcookiecompliance.min.css')}]
 <style>
     .cc-window {
         background-color: [{$oViewConf->getCookieComplianceModuleSetting('sBannerBackgroundColor')}];
