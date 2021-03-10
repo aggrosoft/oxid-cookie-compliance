@@ -19,3 +19,4 @@ Module for OXID 4/5: https://github.com/aggrosoft/oxid-cookie-compliance/tree/ox
 
 ## Notice
 - Template compatibility only for wave theme, feel free to contribute for other themes ;-)
+- If using more languages add table `compliancecookies` to `$this->aMultiLangTables` config.inc.php (supports oxtitle, oxdescription)
