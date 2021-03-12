@@ -1,7 +1,6 @@
 {
   "name": "aggrosoft/oxid-cookie-compliance",
   "type": "oxideshop-module",
-  "version": "1.1.7",
   "description": "GDPR Cookie Compliance",
   "license": "MIT",
   "require": {
