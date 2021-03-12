@@ -3,7 +3,7 @@
 $aLang = array(
     'charset'                                   => 'UTF-8',
     'COOKIE_COMPLIANCE_HEADER' => 'Information about Cookies',
-    'COOKIE_COMPLIANCE_MESSAGE' => 'The velovilles internet pages support cookies. The cookie technolgy provides a good user expierence. We recommande you to accept this technolgy. ',
+    'COOKIE_COMPLIANCE_MESSAGE' => 'This website uses cookies. The cookie technolgy provides a good user expierence. We recommande you to accept this technolgy.',
     'COOKIE_COMPLIANCE_DISMISS' => 'Agree',
     'COOKIE_COMPLIANCE_ALLOW' => 'Accept cookies',
     'COOKIE_COMPLIANCE_ALLOW_ALL' => 'Accept all',
