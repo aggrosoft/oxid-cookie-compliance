@@ -52,6 +52,7 @@ $aModule = array(
         array('group' => 'agcookiecompliance_settings', 'name' => 'sConsentType', 'type' => 'select', 'value' => 'categories', 'constraints' => 'categories|opt-in|opt-out|info'),
         array('group' => 'agcookiecompliance_settings', 'name' => 'sInfoLink', 'type' => 'str', 'value' => ''),
         array('group' => 'agcookiecompliance_settings', 'name' => 'blTrainingMode', 'type' => 'bool', 'value' => false),
+        array('group' => 'agcookiecompliance_settings', 'name' => 'blJqueryMode', 'type' => 'bool', 'value' => true),
     ),
     'blocks' => array(
         array('template' => 'layout/base.tpl','block'=>'base_js','file'=>'/views/blocks/base_js.tpl'),

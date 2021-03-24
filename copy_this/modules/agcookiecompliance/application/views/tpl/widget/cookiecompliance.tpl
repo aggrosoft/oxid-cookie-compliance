@@ -37,24 +37,45 @@
 [{/strip}]
 [{/capture}]
 [{oxscript add=$complianceSettings}]
-[{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance', 'out/js/agcookiecompliance.min.js')}]
+[{if $oViewConf->getCookieComplianceModuleSetting('blJqueryMode')}]
+    [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance', 'out/js/agcookiecompliance.min.js')}]
+    [{else}]
+    [{oxscript include=$oViewConf->getModuleUrl('agcookiecompliance', 'out/js/agcookiecompliance-vanilla.min.js')}]
+[{/if}]
 [{oxid_include_dynamic file="widget/cookiecompliancedialog.tpl"}]
-[{if $oViewConf->getCookieComplianceModuleSetting('blTrainingMode')}]
-[{capture assign=trainingScript}]
+
+[{capture assign=ccScript}]
 [{strip}]
-$(function(){
     window.COOKIE_COMPLIANCE_URL = '[{$oViewConf->getSelfActionLink()}]';
-    $.ajax({
-        url: '[{$oViewConf->getSelfActionLink()}]',
-        method: 'POST',
-        data: {
-            cl: 'cookietrainer',
-            fnc: 'track',
-            cookies: document.cookie
-        }
-    })
-});
+
+    [{if $oViewConf->getCookieComplianceModuleSetting('blTrainingMode')}]
+        [{if $oViewConf->getCookieComplianceModuleSetting('blJqueryMode')}]
+        $(function(){
+            $.ajax({
+                url: '[{$oViewConf->getSelfActionLink()}]',
+                method: 'POST',
+                data: {
+                cl: 'cookietrainer',
+                fnc: 'track',
+                cookies: document.cookie
+                }
+            });
+        });
+        [{else}]
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch(
+                [{$oViewConf->getSelfActionLink()}],
+                {
+                    method: 'POST',
+                    body: {
+                    cl: 'cookietrainer',
+                    fnc: 'track',
+                    cookies: document.cookie
+                }
+            }).catch(function (err) {console.warn('Something went wrong.', err);});
+        });
+        [{/if}]
+    [{/if}]
 [{/strip}]
 [{/capture}]
-[{oxscript add=$trainingScript}]
-[{/if}]
+[{oxscript add=$ccScript}]

@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "release": "dotenv release-it -VV",
-    "build": "node-sass src/styles/main.scss --output-style=compressed > copy_this/modules/agcookiecompliance/out/css/agcookiecompliance.min.css && uglifyjs src/js/agcookiecompliance.js -o copy_this/modules/agcookiecompliance/out/js/agcookiecompliance.min.js -c -m",
+    "build": "node-sass src/styles/main.scss --output-style=compressed > copy_this/modules/agcookiecompliance/out/css/agcookiecompliance.min.css && uglifyjs src/js/agcookiecompliance.js -o copy_this/modules/agcookiecompliance/out/js/agcookiecompliance.min.js -c -m&& uglifyjs src/js/agcookiecompliance-vanilla.js -o copy_this/modules/agcookiecompliance/out/js/agcookiecompliance-vanilla.min.js -c -m",
     "test-release": "release-it --dry-run"
   },
   "devDependencies": {
-    "release-it": "^13.5.4",
-    "@release-it/bumper": "^1.1.0",
-    "auto-changelog": "^2.0.0",
-    "dotenv-cli": "^3.1.0",
-    "node-sass": "^4.14.0",
-    "uglify-js": "^3.9.2"
+    "@release-it/bumper": "^1.4.1",
+    "auto-changelog": "^2.2.1",
+    "dotenv-cli": "^3.2.0",
+    "node-sass": "^4.14.1",
+    "release-it": "^13.7.1",
+    "uglify-js": "^3.13.2"
   },
   "release-it": {
     "github": {
