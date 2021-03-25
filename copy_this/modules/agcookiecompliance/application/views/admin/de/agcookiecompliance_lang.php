@@ -37,6 +37,7 @@ $aLang = array(
     'SHOP_MODULE_sConsentType_info' => 'Nur Information',
     'SHOP_MODULE_sInfoLink' => 'Informations Link',
     'SHOP_MODULE_blTrainingMode' => 'Lern Modus',
+    'SHOP_MODULE_blJqueryMode' => 'Jquery Modus',
     'COOKIE_COMPLIANCE_CATEGORY_ESSENTIAL' => 'Technisch notwendig',
     'COOKIE_COMPLIANCE_CATEGORY_PERSONALIZATION' => 'Personalisierung',
     'COOKIE_COMPLIANCE_CATEGORY_ANALYTICS' => 'Analyse',
