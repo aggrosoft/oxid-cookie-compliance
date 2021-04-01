@@ -64,7 +64,7 @@
         [{else}]
         document.addEventListener('DOMContentLoaded', function () {
             fetch(
-                [{$oViewConf->getSelfActionLink()}],
+                "[{$oViewConf->getSelfActionLink()}]",
                 {
                     method: 'POST',
                     body: {
