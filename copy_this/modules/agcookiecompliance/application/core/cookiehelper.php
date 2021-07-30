@@ -1,5 +1,7 @@
 <?php
 
+use OxidEsales\Eshop\Core\Registry;
+
 class CookieHelper {
 
     public static function getCookieComplianceCategories()
