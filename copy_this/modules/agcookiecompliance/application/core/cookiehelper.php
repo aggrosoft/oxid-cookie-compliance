@@ -1,5 +1,7 @@
 <?php
 
+use OxidEsales\Eshop\Core\Registry;
+
 class CookieHelper {
 
     public static function getCookieComplianceCategories()
@@ -39,7 +41,14 @@ class CookieHelper {
             }
         }
 
-        return false;
+        /** @var agcookiecompliance_oxviewconfig $viewConfig */
+        $viewConfig = Registry::getConfig()->getActiveView()->getViewConfig();
+
+        // in case of no decision cookies are set when opt-out or info is set
+        return in_array(
+            $viewConfig->getCookieComplianceModuleSetting( 'sConsentType'),
+            ['opt-out','info']
+        );
     }
 
     public static function isCookieCategoryMandatory($sCategory)
