@@ -11,7 +11,7 @@
     "@release-it/bumper": "^1.4.1",
     "auto-changelog": "^2.2.1",
     "dotenv-cli": "^3.2.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "release-it": "^13.7.1",
     "uglify-js": "^3.13.2"
   },
