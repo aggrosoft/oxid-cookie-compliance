@@ -2,7 +2,7 @@
 
 class agcookiecompliance_installer {
 
-    public function onActivate () {
+    public static function onActivate () {
         $query = 'CREATE TABLE IF NOT EXISTS compliancecookies (
                     OXID CHAR(32) character set latin1 collate latin1_general_ci NOT NULL, 
                     OXSHOPID int(11) NOT NULL default 1,
